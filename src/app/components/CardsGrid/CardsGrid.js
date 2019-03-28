@@ -30,7 +30,6 @@ class CardsGrid extends React.Component {
      }
 
      componentDidMount() {
-       debugger;
        this.props.fetchDataFromAPI(this.params);
      }
 

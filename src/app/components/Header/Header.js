@@ -20,7 +20,7 @@ render(){
         <Link to="/films">Films</Link>
       </li>
       <li className='navItem'>
-        <Link to="/favorite">Favorite</Link>
+        <Link to="/favorites">Favorites</Link>
       </li>
 
     </ul>

@@ -2,7 +2,6 @@ function fetchAPI(state =[], action) {
 
   switch (action.type) {
    case 'SET_DATA':
-   debugger;
     let obj = {};
     // let param = action.param || 'data';
     // obj[param] = action.payload;

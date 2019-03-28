@@ -25,7 +25,6 @@ export function setDataFromAPI(data) {
  export function fetchDataFromAPI(param) {
   return function(dispatch) {
     return axios.get(`https://swapi.co/api/${param}`).then(({ data }) => {
-      debugger;
       dispatch(setDataFromAPI(data.results));
     });
   };
