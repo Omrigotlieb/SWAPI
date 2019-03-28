@@ -1,0 +1,10 @@
+.navigation {
+  display: flex;
+  list-style: none;
+   justify-content: space-around;
+}
+
+.navItem a {
+  margin-right: 18px;
+  color: #BA8748;
+}

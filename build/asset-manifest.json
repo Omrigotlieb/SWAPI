@@ -1,0 +1,18 @@
+{
+  "main.css": "/static/css/main.ba1bdb76.chunk.css",
+  "main.js": "/static/js/main.07b47b79.chunk.js",
+  "main.js.map": "/static/js/main.07b47b79.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/js/2.cb6e682d.chunk.js": "/static/js/2.cb6e682d.chunk.js",
+  "static/js/2.cb6e682d.chunk.js.map": "/static/js/2.cb6e682d.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.239935c30855d75984ca23e879833333.js": "/precache-manifest.239935c30855d75984ca23e879833333.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/main.ba1bdb76.chunk.css.map": "/static/css/main.ba1bdb76.chunk.css.map",
+  "static/media/activeHeart.svg": "/static/media/activeHeart.11ca3562.svg",
+  "static/media/cardIcon.jpg": "/static/media/cardIcon.714c6be7.jpg",
+  "static/media/heart.svg": "/static/media/heart.2b7b92f2.svg",
+  "static/media/loader.gif": "/static/media/loader.6c7da918.gif",
+  "static/media/yodaWelcomeIcon.png": "/static/media/yodaWelcomeIcon.ae51899b.png"
+}

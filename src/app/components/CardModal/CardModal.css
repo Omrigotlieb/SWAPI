@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Poiret+One|PT+Sans+Narrow:400,700);
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card-modal {
+  display: grid;
+  justify-items: center;
+  border-radius: 50px;
+  background-color: #BA8748;
+  font-family: 'Poiret One', sans-serif;
+  margin: 30px;
+  width: 700px;
+  height: 410px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  align-items: center;
+}
+
+.card-modal:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-modal .title {
+  color: #BA8748;
+}
+
+.card-modal .episode {
+  position: relative;
+    top: 15%;
+}
+
+.card-modal .director {
+  color: #BA8748;
+  position: relative;
+  top: 40%;
+}
+
+.card-modal > img {
+  width: 100px;
+  height: 100px;
+}
+
+.card-modal .heart {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+
+/**
+.Business {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 16.66rem;
+  margin: 0 .5rem 2.3rem .5rem;
+}
+
+.Business .image-container {
+  height: 16.66rem;
+  margin-bottom: 1rem;
+}
+
+.Business h2 {
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.Business-information {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Business-information p {
+  font-size: .88rem;
+  font-weight: 300;
+  line-height: 1rem;
+}
+
+.Business-address {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Business-reviews {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.Business-reviews h3 {
+  color: #CCA353;
+  font-weight: 600;
+}
+
+.Business-reviews .rating {
+  font-size: .88rem;
+  line-height: 1rem;
+}
+*/
