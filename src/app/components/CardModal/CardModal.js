@@ -37,14 +37,17 @@ render() {
   const heartIcon = this.state.isFavorite ? activeHeart: heart;
   return (
     <div className="container">
-    <div className='card-modal'>
-    <div className='headline'>
-     {headline}
-     </div>
-     <img src={`../../${view}/${cardIcon}`} alt="cardIcon" />
-
+      <div className='card-modal'>
+      <div className='top-card'>
+        <div className='picture'>
+          <img src={`../../${view}/${cardIcon}`} alt="cardIcon" className='icon'/>
+        </div>
+        <div className='headline'>
+          {headline}
+          </div>
+          </div>
      <div className='year'>
-      {year}
+      year : {year}
       </div>
       <div className='year'>
        {gender}

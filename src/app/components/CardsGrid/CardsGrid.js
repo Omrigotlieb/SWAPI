@@ -3,6 +3,7 @@ import SingleCard from '../SingleCard/SingleCard';
 import './CardsGrid.css';
 import loader from '../../../assets/loader.gif';
 
+
 class CardsGrid extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,6 @@ class CardsGrid extends React.Component {
      }
 
   render() {
-    //this.cardIcons = this.avatars || '';
     const avatars = this.avatars;
     const { data }  = this.props;
     const cardIcon = data[0].cardIcon;
@@ -38,7 +38,8 @@ class CardsGrid extends React.Component {
         if(!icon) {
           icon = avatars ? avatars[this.params][index] : null;
         }
-        return (<li key={index}>
+        return (
+          <li key={index}>
                 <SingleCard
                     favorite={false}
                     cardIcon={icon}

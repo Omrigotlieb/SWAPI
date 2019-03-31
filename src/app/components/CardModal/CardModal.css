@@ -26,6 +26,13 @@
   color: #BA8748;
 }
 
+.headline {
+	font-family: 'Varela Round', sans-serif;
+	color: #2E2E2E;
+	font-size: 45px;
+	line-height: 1.5;
+}
+
 .card-modal .episode {
   position: relative;
     top: 15%;
@@ -40,6 +47,7 @@
 .card-modal > img {
   width: 100px;
   height: 100px;
+  border-radius: 50px
 }
 
 .card-modal .heart {
@@ -50,6 +58,18 @@
 
 .card-modal .headline {
   width: 100%;
-  font-size: -webkit-xxx-large;
+  font-size: 60px;
   position: relative;
+  align-content: center;
+  align-self: center;
+  left: 0%;
+}
+
+.top-card {
+  display: flex;
+  width: 80%;
+}
+
+.picture > .icon {
+	border-radius:50px;
 }
