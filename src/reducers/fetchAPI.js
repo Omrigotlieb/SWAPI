@@ -1,14 +1,21 @@
-function fetchAPI(state =[], action) {
+import { fromJS } from "immutable";
+
+const initialState = fromJS({
+  data: { 'films/': [], 'people/': [] }
+});
+
+function fetchAPI(state = initialState, action) {
 
   switch (action.type) {
    case 'SET_DATA':
     let obj = {};
-    // let param = action.param || 'data';
-    // obj[param] = action.payload;
-    obj.data = action.payload;
-    return Object.assign({}, state, obj);
+    obj[action.param] = action.payload;
+    const newState = Object.assign({}, state, obj);
+    localStorage.setItem(action.param, JSON.stringify(newState));
+    return newState;
+
    default:
-     return state
+     return state;
  }
 }
 

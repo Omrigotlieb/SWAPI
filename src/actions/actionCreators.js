@@ -1,10 +1,10 @@
 import axios from "axios";
 import { SET_DATA, TOGGLE_FAVORITES } from "./types";
 
-export function favoriteCard (isFavorite) {
+export function favoriteCard (item) {
   return {
     type: TOGGLE_FAVORITES,
-    isFavorite
+    item
   }
 };
 
@@ -18,14 +18,22 @@ export function unfavoriteCard (index) {
 export function setDataFromAPI(data) {
  return {
    type: SET_DATA,
-   payload: data
+   payload: data.results,
+   param: data.param
  };
 };
 
  export function fetchDataFromAPI(param) {
   return function(dispatch) {
-    return axios.get(`https://swapi.co/api/${param}`).then(({ data }) => {
-      dispatch(setDataFromAPI(data.results));
-    });
+    const localStorageData = localStorage.getItem(param);
+    if(!localStorageData) {
+      return axios.get(`https://swapi.co/api/${param}`).then(({ data }) => {
+        data.param = param;
+        return new Promise(function(resolve, reject) {
+                dispatch(setDataFromAPI(data));
+                resolve(data);
+            })
+      });
+    }
   };
 };

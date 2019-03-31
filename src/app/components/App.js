@@ -14,8 +14,9 @@ class App extends React.Component {
 
     render() {
      let data = this.props.data;
+     let params = this.props.match.url.slice(1);
       return (
-        <Main data={data}/>
+        <Main data={data} params={params}/>
       )
     }
   };
@@ -25,8 +26,8 @@ function mapDispachToProps(dispatch) {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const {people, films, data} = state.fetchAPI;
-  return {data, people, films};
+  const { data } = state.fetchAPI;
+  return { data };
 };
 
 export default connect(mapStateToProps, mapDispachToProps)(App);

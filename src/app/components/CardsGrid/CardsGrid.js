@@ -1,9 +1,5 @@
 import React from 'react';
 import SingleCard from '../SingleCard/SingleCard';
-import { films }  from '../../../data/films';
-import { people }  from '../../../data/people';
-import { fetchDataFromAPI } from '../../../actions/actionCreators';
-import { connect } from 'react-redux';
 import './CardsGrid.css';
 import loader from '../../../assets/loader.gif';
 
@@ -14,39 +10,40 @@ class CardsGrid extends React.Component {
       films: [],
       people: []
     }
-    this.avatars = {};
-    this.params = this.props.match.url.slice(1);
+
+    this.params = this.props.params;
   }
 
   componentWillMount () {
-      this.params = this.props.match.url.slice(1);
-      let req;
-      if(this.params === 'films') {
-        req = require.context('../../../assets/films', true, /.*\.png$/);
-      } else {
-        req = require.context('../../../assets/people', true, /.*\.png$/);
-      }
-      this.avatars = req.keys();
-     }
-
-     componentDidMount() {
-       this.props.fetchDataFromAPI(this.params);
+      let req = require.context('../../../assets', true, /.*\.png$/)
+                .keys();
+      this.avatars = [];
+      this.avatars['favorites/'] = req.splice(0,21).map(item => item.replace(new RegExp('\.\/[a-z]*\/') , ''));;
+      const filmsAvatar = req.splice(1,9).map(item => item.replace(new RegExp('\.\/[a-z]*\/') , ''));
+      const peopleAvatar = req.splice(1,11).map(item => item.replace(new RegExp('\.\/[a-z]*\/') , ''));;
+      this.avatars['films/'] = filmsAvatar;
+      this.avatars['people/'] = peopleAvatar;
      }
 
   render() {
-    this.cardIcons = this.avatars || '';
-    const data = this.props[this.params] || this.props.data;
-    const view = this.props.data;
+    //this.cardIcons = this.avatars || '';
+    const avatars = this.avatars;
+    const { data }  = this.props;
+    const cardIcon = data[0].cardIcon;
     return (
       <div>
       <ul className="flex-container wrap" key={this.params}>
-      {data ? data.map((item, index)  => {
-        let icon = this.avatars ? './' + this.params + '/'+ this.avatars[index].slice(2) : null;
+      {data ? data.map((item, index) => {
+        let icon = item.cardIcon;
+        if(!icon) {
+          icon = avatars ? avatars[this.params][index] : null;
+        }
         return (<li key={index}>
                 <SingleCard
+                    favorite={false}
                     cardIcon={icon}
                     i={index}
-                    view={view}
+                    params={this.params}
                     title={item.title}
                     episodeId={item.episode_id}
                     director={item.director}
@@ -63,9 +60,4 @@ class CardsGrid extends React.Component {
   }
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchDataFromAPI: (params) => dispatch(fetchDataFromAPI(params))
-})
-
-CardsGrid = connect(null, mapDispatchToProps)(CardsGrid)
 export default CardsGrid;
